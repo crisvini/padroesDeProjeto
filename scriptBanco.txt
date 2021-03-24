@@ -1,0 +1,23 @@
+create database padroesDeProjeto;
+
+use padroesDeProjeto;
+
+create table cliente(
+
+	id int NOT NULL auto_increment, 
+    nome varchar(50) NOT NULL,
+    dataNascimento varchar(10) NOT NULL,
+	primary key(id)    
+    
+);
+
+create table conta(
+
+	id int NOT NULL auto_increment,
+	saldo double NOT NULL,
+    numero int NOT NULL, 
+    clienteId int NOT NULL,
+    primary key (id),
+    foreign key (clienteId) references cliente(id)
+
+);
